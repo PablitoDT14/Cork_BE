@@ -1,7 +1,7 @@
 module.exports = function(app, databaseService){
 
 app.get('/', (request, response) =>{
-    response.json({"mensaje":"Llegaste hasta aca"})
+    response.json({"mensaje":"BIENVENIDO"})
 });
 
 app.post('/customer', (request, response) =>{
@@ -41,26 +41,11 @@ app.get('/getCustomer', (request, response) =>{
     })
 });
 
-
-
-app.post('/lenguajes', (request, response) =>{
-    const nuevoLenguaje =request.body;
-    console.log(nuevoLenguaje);
-    response.json({"mensaje":"Lenguaje creado"})
-});
-
 app.get('/login', (request, response) =>{
     const login  = request.body;
     console.log(login);
     response.json({"mensaje":"Acceso correcto"})
 });
-
-app.get('/customer', (request, response) =>{
-    const getCustomer  = request.body;
-    console.log(getCustomer);
-    response.json({"mensaje":"Datos del cliente"})
-});
-
 
 
 app.get('/transactions', (request, response) =>{
