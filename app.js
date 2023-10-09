@@ -10,7 +10,7 @@ require('./routes')(app, databaseService());
 
 
 app.listen(3000, ()=>{
- console.log('App listening on Port 3000 bro'); 
+ console.log('App listening on Port 3000'); 
 });
 
 
