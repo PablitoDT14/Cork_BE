@@ -4,8 +4,7 @@
   "description": "proyecto",
   "main": "app.js",
   "scripts": {
-    "build": "babel src -d lib",
-    "test": "jest"
+    "start": "node app.js"
   },
   "author": "Pablo A",
   "license": "ISC",
