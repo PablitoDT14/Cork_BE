@@ -42,10 +42,15 @@ const databaseService = () => {
             fechaNacimiento: fechaNacimiento
         });
     };
+
+    const updateCustomerPoints = (dni, puntos) => {
+        return knex(table).where('DNI', dni).increment('puntosTotales', -puntos);
+    };
 return{
     createCustomer,
     getAllCustomers,
-    getCustomer
+    getCustomer,
+    updateCustomerPoints
 };
 };
 module.exports={databaseService};

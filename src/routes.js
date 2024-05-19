@@ -16,6 +16,18 @@ app.post('/customer', (request, response) =>{
     })
 });
 
+app.post('/customer/puntos', (request, response) =>{
+    const {dni, puntos}  = request.body;
+    console.log(customer);
+    databaseService.updateCustomerPoints(dni, puntos)
+    .then(resultado=>{
+        response.json({"mensaje":"Puntos descontado"})
+    })
+    .catch(e=>{
+        response.status(500).json(e)
+    })
+});
+
 app.get('/allcustomers', (request, response) =>{
     const customer  = request.body;
     console.log(customer);
