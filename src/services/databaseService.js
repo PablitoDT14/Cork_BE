@@ -1,5 +1,5 @@
-import Cors from 'cors';
-import initMiddleware from '../../lib/init-middleware';
+const Cors = require('cors');
+//const initMiddleware = require('init-middleware');
 
 const databaseService = () => {
     const knex = require('knex')({
@@ -21,12 +21,14 @@ const databaseService = () => {
         return knex(table).select();
     }
 
-    const cors = initMiddleware(
+    const cors = 
+    //initMiddleware(
         Cors({
           methods: ['GET', 'POST', 'PUT', 'DELETE'],
           origin: 'http://127.0.0.1/', 
         })
-      );
+     // )
+      ;
 
     const getCustomer = (dni)=>{
         return knex(table).where('DNI',dni).select();
@@ -53,4 +55,4 @@ return{
     updateCustomerPoints
 };
 };
-module.exports={databaseService};
+module.exports=databaseService;
